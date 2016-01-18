@@ -11,7 +11,7 @@ class Flickr_model extends CI_Model {
 
     function __construct(){
         parent::__construct();
-        $this->api_key='23f847df130df11da00349276579f9be';
+        $this->api_key='97d75ad8ab8120108cf967e7a159e6a2';
         $this->format='json';
     }
 
@@ -25,7 +25,7 @@ class Flickr_model extends CI_Model {
         $sort='interestingness-desc';
         $media='photo';
         $license='4,2,1,5,7';
-        $url="http://api.flickr.com/services/rest/?method=flickr.photos.search&per_page=20&page=$page&api_key=$this->api_key&tags=$tags&sort=$sort&media=$media&license=$license&format=$this->format&tag_mode=$tag_mode&extras=owner_nam,o_dims,url_o";
+        $url="https://api.flickr.com/services/rest/?method=flickr.photos.search&per_page=20&page=$page&api_key=$this->api_key&tags=$tags&sort=$sort&media=$media&license=$license&format=$this->format&tag_mode=$tag_mode&extras=owner_nam,o_dims,url_o";
         $res=file_get_contents($url);
         $images = json_decode($this->_clean($res));
 
@@ -51,7 +51,7 @@ class Flickr_model extends CI_Model {
     }
 
     private function _get_owner($user_id){
-        $url="http://api.flickr.com/services/rest/?method=flickr.people.getInfo&api_key=$this->api_key&user_id=$user_id&format=json";
+        $url="https://api.flickr.com/services/rest/?method=flickr.people.getInfo&api_key=$this->api_key&user_id=$user_id&format=json";
         $res=file_get_contents($url);
 
         $user = json_decode($this->_clean($res));
