@@ -28,8 +28,8 @@ class Flickr_model extends CI_Model {
         $url="https://api.flickr.com/services/rest/?method=flickr.photos.search&per_page=20&page=$page&api_key=$this->api_key&tags=$tags&sort=$sort&media=$media&license=$license&format=$this->format&tag_mode=$tag_mode&extras=owner_nam,o_dims,url_o";
         $res=file_get_contents($url);
         $images = json_decode($this->_clean($res));
-
-        //exit();
+var_dump($images);
+        exit();
         $images=$images->photos->photo;
         shuffle($images);
         foreach($images as $image){
