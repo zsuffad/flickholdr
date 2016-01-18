@@ -1,0 +1,11 @@
+{
+    "name": "zsuffad/flickholdr",
+    "description": "Random flickr placeholder images.",
+    "authors": [
+        {
+            "name": "zsuffa.david",
+            "email": "zsuffa.david@gmail.com"
+        }
+    ],
+    "require": {}
+}
